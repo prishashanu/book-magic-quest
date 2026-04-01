@@ -2,6 +2,39 @@ import { useBooks } from "@/context/BookContext";
 import { books } from "@/data/books";
 import { allBadges, badgeCategories } from "@/data/badges";
 import { useState } from "react";
+import { Bookmark, BookOpen, Star, Crown, Trophy, Search, Wand2, Compass, Smile, PawPrint, Target, GraduationCap, Sparkles, Pencil, Users, Globe, Award, Flame, Zap, Heart, Library, Timer, Calendar, Moon, Sunrise, PenTool, CheckCircle } from "lucide-react";
+
+const iconMap: Record<string, React.ReactNode> = {
+  bookmark: <Bookmark className="h-5 w-5" />,
+  "book-open": <BookOpen className="h-5 w-5" />,
+  star: <Star className="h-5 w-5" />,
+  book: <BookOpen className="h-5 w-5" />,
+  crown: <Crown className="h-5 w-5" />,
+  trophy: <Trophy className="h-5 w-5" />,
+  search: <Search className="h-5 w-5" />,
+  wand: <Wand2 className="h-5 w-5" />,
+  compass: <Compass className="h-5 w-5" />,
+  smile: <Smile className="h-5 w-5" />,
+  paw: <PawPrint className="h-5 w-5" />,
+  target: <Target className="h-5 w-5" />,
+  graduation: <GraduationCap className="h-5 w-5" />,
+  sparkles: <Sparkles className="h-5 w-5" />,
+  pencil: <Pencil className="h-5 w-5" />,
+  users: <Users className="h-5 w-5" />,
+  globe: <Globe className="h-5 w-5" />,
+  award: <Award className="h-5 w-5" />,
+  flame: <Flame className="h-5 w-5" />,
+  zap: <Zap className="h-5 w-5" />,
+  bolt: <Zap className="h-5 w-5" />,
+  heart: <Heart className="h-5 w-5" />,
+  library: <Library className="h-5 w-5" />,
+  timer: <Timer className="h-5 w-5" />,
+  calendar: <Calendar className="h-5 w-5" />,
+  moon: <Moon className="h-5 w-5" />,
+  sunrise: <Sunrise className="h-5 w-5" />,
+  pen: <PenTool className="h-5 w-5" />,
+  "check-circle": <CheckCircle className="h-5 w-5" />,
+};
 
 const TrackerPage = () => {
   const { readBooks, readingStreak, favorites } = useBooks();
@@ -13,7 +46,7 @@ const TrackerPage = () => {
     genreCounts[b.genre] = (genreCounts[b.genre] || 0) + 1;
   });
   const uniqueGenres = Object.keys(genreCounts).length;
-  const favoriteGenre = Object.entries(genreCounts).sort((a, b) => b[1] - a[1])[0]?.[0] || "None yet";
+  const favoriteGenre = Object.entries(genreCounts).sort((a, b) => b[1] - a[1])[0]?.[0] || "—";
 
   const earnedBadge = (badge: typeof allBadges[0]) => {
     if (badge.category === "genre" && badge.genre) return (genreCounts[badge.genre] || 0) >= badge.threshold;
@@ -31,74 +64,69 @@ const TrackerPage = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="font-display text-3xl md:text-4xl font-extrabold text-center mb-2">Reading Tracker</h1>
-      <p className="text-muted-foreground text-center mb-10">Track your progress and collect badges 🏅</p>
+      <h1 className="font-display text-2xl md:text-3xl font-extrabold text-center mb-1">Reading Tracker</h1>
+      <p className="text-muted-foreground text-sm text-center mb-10">Track your progress and unlock badges as you read.</p>
 
       {/* Stats */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
-        <div className="bg-sky/10 rounded-2xl p-5 text-center border border-sky/20">
-          <span className="text-2xl block mb-1.5">📚</span>
-          <p className="font-display text-3xl font-extrabold text-primary">{readBooks.length}</p>
-          <p className="text-xs text-muted-foreground mt-0.5">Summaries Read</p>
+        <div className="bg-card rounded-xl p-5 text-center border border-border">
+          <p className="font-display text-3xl font-extrabold text-foreground">{readBooks.length}</p>
+          <p className="text-xs text-muted-foreground mt-1">Summaries Read</p>
         </div>
-        <div className="bg-coral/10 rounded-2xl p-5 text-center border border-coral/20">
-          <span className="text-2xl block mb-1.5">🔥</span>
-          <p className="font-display text-3xl font-extrabold text-coral">{readingStreak}</p>
-          <p className="text-xs text-muted-foreground mt-0.5">Day Streak</p>
+        <div className="bg-card rounded-xl p-5 text-center border border-border">
+          <p className="font-display text-3xl font-extrabold text-foreground">{readingStreak}</p>
+          <p className="text-xs text-muted-foreground mt-1">Day Streak</p>
         </div>
-        <div className="bg-lavender/10 rounded-2xl p-5 text-center border border-lavender/20">
-          <span className="text-2xl block mb-1.5">💜</span>
-          <p className="font-display text-lg font-bold">{favoriteGenre}</p>
-          <p className="text-xs text-muted-foreground mt-0.5">Top Genre</p>
+        <div className="bg-card rounded-xl p-5 text-center border border-border">
+          <p className="font-display text-lg font-bold text-foreground">{favoriteGenre}</p>
+          <p className="text-xs text-muted-foreground mt-1">Top Genre</p>
         </div>
-        <div className="bg-sunshine/10 rounded-2xl p-5 text-center border border-sunshine/20">
-          <span className="text-2xl block mb-1.5">🏅</span>
-          <p className="font-display text-3xl font-extrabold text-sunshine">{earnedCount}</p>
-          <p className="text-xs text-muted-foreground mt-0.5">Badges Earned</p>
+        <div className="bg-card rounded-xl p-5 text-center border border-border">
+          <p className="font-display text-3xl font-extrabold text-foreground">{earnedCount}</p>
+          <p className="text-xs text-muted-foreground mt-1">Badges Earned</p>
         </div>
       </div>
 
       {/* Progress bar */}
-      <div className="bg-card rounded-2xl border border-border p-6 mb-10">
-        <h2 className="font-display text-base font-bold mb-3">📈 Reading Progress</h2>
-        <div className="flex items-center gap-3">
-          <div className="flex-1 bg-muted rounded-full h-3.5 overflow-hidden">
-            <div
-              className="bg-gradient-to-r from-primary to-lavender h-full rounded-full transition-all duration-700"
-              style={{ width: `${Math.min((readBooks.length / 12) * 100, 100)}%` }}
-            />
-          </div>
-          <span className="text-sm font-display font-bold">{readBooks.length}/12</span>
+      <div className="bg-card rounded-xl border border-border p-6 mb-10">
+        <div className="flex items-center justify-between mb-3">
+          <h2 className="font-display text-sm font-bold">Reading Progress</h2>
+          <span className="text-sm font-display font-bold text-muted-foreground">{readBooks.length} / 12</span>
         </div>
-        <p className="text-xs text-muted-foreground mt-2">Read all 12 summaries to unlock Completionist! 🏆</p>
+        <div className="w-full bg-muted rounded-full h-2.5 overflow-hidden">
+          <div
+            className="bg-primary h-full rounded-full transition-all duration-700"
+            style={{ width: `${Math.min((readBooks.length / 12) * 100, 100)}%` }}
+          />
+        </div>
+        <p className="text-xs text-muted-foreground mt-2">Read all 12 summaries to earn the Completionist badge.</p>
       </div>
 
       {/* Badge filters */}
-      <h2 className="font-display text-2xl font-extrabold mb-4">🏅 Badge Collection</h2>
-      <div className="flex flex-wrap gap-2 mb-6">
+      <div className="flex items-center justify-between mb-4">
+        <h2 className="font-display text-lg font-extrabold">Badges</h2>
+        <span className="text-xs text-muted-foreground">{earnedCount} of {allBadges.length} unlocked</span>
+      </div>
+      <div className="flex flex-wrap gap-1.5 mb-6">
         <button
           onClick={() => setActiveCategory("all")}
-          className={`px-3.5 py-1.5 rounded-lg text-sm font-semibold transition-all ${
-            activeCategory === "all" ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground hover:bg-muted/80"
+          className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${
+            activeCategory === "all" ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground hover:text-foreground"
           }`}
         >
-          All ({allBadges.length})
+          All
         </button>
-        {badgeCategories.map((cat) => {
-          const count = allBadges.filter(b => b.category === cat.key).length;
-          const earned = allBadges.filter(b => b.category === cat.key && earnedBadge(b)).length;
-          return (
-            <button
-              key={cat.key}
-              onClick={() => setActiveCategory(cat.key)}
-              className={`px-3.5 py-1.5 rounded-lg text-sm font-semibold transition-all ${
-                activeCategory === cat.key ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground hover:bg-muted/80"
-              }`}
-            >
-              {cat.emoji} {cat.label} ({earned}/{count})
-            </button>
-          );
-        })}
+        {badgeCategories.map((cat) => (
+          <button
+            key={cat.key}
+            onClick={() => setActiveCategory(cat.key)}
+            className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${
+              activeCategory === cat.key ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground hover:text-foreground"
+            }`}
+          >
+            {cat.label}
+          </button>
+        ))}
       </div>
 
       {/* Badges grid */}
@@ -109,13 +137,17 @@ const TrackerPage = () => {
             <div
               key={badge.id}
               className={`rounded-xl p-4 text-center border transition-all ${
-                earned ? `${badge.color} border-border magic-glow` : "bg-muted/30 border-border/50 opacity-50 grayscale"
+                earned ? "bg-card border-primary/20 warm-glow" : "bg-muted/30 border-border/50 opacity-40"
               }`}
             >
-              <span className="text-3xl block mb-1.5">{badge.emoji}</span>
+              <div className={`mx-auto mb-2 w-10 h-10 rounded-lg flex items-center justify-center ${
+                earned ? "bg-primary/10 text-primary" : "bg-muted text-muted-foreground"
+              }`}>
+                {iconMap[badge.icon] || <Star className="h-5 w-5" />}
+              </div>
               <span className="font-display text-xs font-bold block leading-tight">{badge.name}</span>
               <span className="text-[10px] text-muted-foreground leading-tight block mt-0.5">{badge.desc}</span>
-              {earned && <span className="block text-[10px] text-primary font-bold mt-1">Earned ✓</span>}
+              {earned && <span className="block text-[10px] text-primary font-semibold mt-1">Unlocked</span>}
             </div>
           );
         })}
