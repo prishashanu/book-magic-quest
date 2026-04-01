@@ -13,8 +13,8 @@ const BookDetailPage = () => {
   if (!book) {
     return (
       <div className="container mx-auto px-4 py-16 text-center">
-        <span className="text-5xl block mb-4">📖</span>
-        <h1 className="font-display text-2xl font-bold mb-2">Book Not Found</h1>
+        <span className="text-4xl block mb-4">📖</span>
+        <h1 className="font-display text-2xl font-extrabold mb-2">Book Not Found</h1>
         <Link to="/browse"><Button>Browse Books</Button></Link>
       </div>
     );
@@ -34,24 +34,16 @@ const BookDetailPage = () => {
         {/* Cover */}
         <div className="md:col-span-1">
           <div className={`${book.coverColor} rounded-2xl p-12 flex items-center justify-center aspect-square magic-glow`}>
-            <span className="text-[120px]">{book.coverEmoji}</span>
+            <span className="text-[100px]">{book.coverEmoji}</span>
           </div>
           <div className="flex gap-2 mt-4">
-            <Button
-              variant={fav ? "coral" : "outline"}
-              className="flex-1 gap-2"
-              onClick={() => toggleFavorite(book.id)}
-            >
+            <Button variant={fav ? "coral" : "outline"} className="flex-1 gap-2" onClick={() => toggleFavorite(book.id)}>
               <Heart className={`h-4 w-4 ${fav ? "fill-current" : ""}`} />
-              {fav ? "Saved!" : "Save Book"}
+              {fav ? "Saved" : "Save"}
             </Button>
-            <Button
-              variant={read ? "mint" : "outline"}
-              className="flex-1 gap-2"
-              onClick={() => markAsRead(book.id)}
-            >
+            <Button variant={read ? "mint" : "outline"} className="flex-1 gap-2" onClick={() => markAsRead(book.id)}>
               <BookOpen className="h-4 w-4" />
-              {read ? "Read ✓" : "Mark as Read"}
+              {read ? "Read ✓" : "Mark Read"}
             </Button>
           </div>
         </div>
@@ -63,53 +55,51 @@ const BookDetailPage = () => {
               <Star key={i} className="h-5 w-5 fill-sunshine text-sunshine" />
             ))}
           </div>
-          <h1 className="font-display text-3xl md:text-4xl font-bold mb-1">{book.title}</h1>
+          <h1 className="font-display text-3xl md:text-4xl font-extrabold mb-1">{book.title}</h1>
           <p className="text-muted-foreground mb-4">by {book.author}</p>
 
           <div className="flex flex-wrap gap-2 mb-6">
-            <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-display font-semibold">{book.genre}</span>
-            <span className="bg-muted px-3 py-1 rounded-full text-sm flex items-center gap-1">
+            <span className="bg-primary/10 text-primary px-3 py-1 rounded-lg text-sm font-display font-bold">{book.genre}</span>
+            <span className="bg-muted px-3 py-1 rounded-lg text-sm flex items-center gap-1">
               <Clock className="h-3.5 w-3.5" /> {book.readTime} read
             </span>
-            <span className="bg-mint/20 text-mint-foreground px-3 py-1 rounded-full text-sm font-medium">Ages {book.ageRange}</span>
+            <span className="bg-mint/15 text-mint-foreground px-3 py-1 rounded-lg text-sm font-medium">Ages {book.ageRange}</span>
           </div>
 
-          {/* Summary sections */}
-          <div className="space-y-6">
+          <div className="space-y-5">
             <div className="bg-card rounded-2xl border border-border p-6">
-              <h2 className="font-display text-lg font-semibold mb-3 flex items-center gap-2">📖 What This Book Is About</h2>
+              <h2 className="font-display text-base font-bold mb-3 flex items-center gap-2">📖 What This Book Is About</h2>
               <p className="text-sm leading-relaxed text-muted-foreground">{book.summary}</p>
             </div>
 
             <div className="bg-card rounded-2xl border border-border p-6">
-              <h2 className="font-display text-lg font-semibold mb-3 flex items-center gap-2">👥 Main Characters</h2>
+              <h2 className="font-display text-base font-bold mb-3 flex items-center gap-2">👥 Main Characters</h2>
               <ul className="space-y-2">
                 {book.characters.map((char, i) => (
                   <li key={i} className="text-sm text-muted-foreground flex items-start gap-2">
-                    <span className="text-primary">⭐</span> {char}
+                    <span className="text-primary">•</span> {char}
                   </li>
                 ))}
               </ul>
             </div>
 
             <div className="bg-card rounded-2xl border border-border p-6">
-              <h2 className="font-display text-lg font-semibold mb-3 flex items-center gap-2">💖 Why Kids May Like It</h2>
+              <h2 className="font-display text-base font-bold mb-3 flex items-center gap-2">💡 Why Readers Like It</h2>
               <p className="text-sm text-muted-foreground">{book.whyKidsLikeIt}</p>
             </div>
 
-            <div className="bg-gradient-to-r from-sunshine/10 to-coral/10 rounded-2xl border border-border p-6">
-              <h2 className="font-display text-lg font-semibold mb-3 flex items-center gap-2">💡 Lesson or Message</h2>
+            <div className="bg-gradient-to-r from-sunshine/8 to-coral/8 rounded-2xl border border-border p-6">
+              <h2 className="font-display text-base font-bold mb-3 flex items-center gap-2">✨ Takeaway</h2>
               <p className="text-sm text-muted-foreground italic">"{book.lesson}"</p>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Related */}
       {related.length > 0 && (
         <section className="mt-16">
-          <h2 className="font-display text-2xl font-bold mb-6">📚 More {book.genre} Books</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <h2 className="font-display text-2xl font-extrabold mb-6">More {book.genre} Books</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {related.map((b) => <BookCard key={b.id} book={b} />)}
           </div>
         </section>

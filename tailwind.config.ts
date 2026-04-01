@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ["Fredoka", "sans-serif"],
-        body: ["Nunito", "sans-serif"],
+        display: ["Plus Jakarta Sans", "sans-serif"],
+        body: ["Inter", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -100,19 +100,19 @@ export default {
         },
         float: {
           "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-10px)" },
+          "50%": { transform: "translateY(-8px)" },
         },
         wiggle: {
-          "0%, 100%": { transform: "rotate(-3deg)" },
-          "50%": { transform: "rotate(3deg)" },
+          "0%, 100%": { transform: "rotate(-2deg)" },
+          "50%": { transform: "rotate(2deg)" },
         },
         "sparkle-spin": {
           "0%": { transform: "rotate(0deg) scale(1)" },
-          "50%": { transform: "rotate(180deg) scale(1.2)" },
+          "50%": { transform: "rotate(180deg) scale(1.15)" },
           "100%": { transform: "rotate(360deg) scale(1)" },
         },
         "fade-in-up": {
-          "0%": { opacity: "0", transform: "translateY(20px)" },
+          "0%": { opacity: "0", transform: "translateY(16px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
       },
@@ -122,7 +122,7 @@ export default {
         float: "float 3s ease-in-out infinite",
         wiggle: "wiggle 1s ease-in-out infinite",
         "sparkle-spin": "sparkle-spin 2s ease-in-out infinite",
-        "fade-in-up": "fade-in-up 0.5s ease-out forwards",
+        "fade-in-up": "fade-in-up 0.4s ease-out forwards",
       },
     },
   },
