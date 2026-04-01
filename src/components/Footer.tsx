@@ -1,18 +1,19 @@
 import { Link } from "react-router-dom";
+import mascot from "@/assets/mascot.png";
 
 const Footer = () => (
   <footer className="bg-card border-t border-border mt-20">
     <div className="container mx-auto px-4 py-12">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
         <div>
-          <div className="flex items-center gap-2 mb-3">
-            <span className="text-2xl">✨</span>
-            <span className="font-display text-lg font-bold bg-gradient-to-r from-primary via-lavender to-coral bg-clip-text text-transparent">
-              Story Spark
+          <div className="flex items-center gap-2.5 mb-3">
+            <img src={mascot} alt="Page Peek mascot" className="h-8 w-8 rounded-full" loading="lazy" width={32} height={32} />
+            <span className="font-display text-lg font-extrabold bg-gradient-to-r from-primary via-lavender to-coral bg-clip-text text-transparent">
+              Page Peek
             </span>
           </div>
           <p className="text-sm text-muted-foreground">
-            A magical place for kids who love stories and want to discover books faster! ⭐
+            Quick, fun book summaries for readers who want to discover their next favorite story. 📖
           </p>
         </div>
         <div>
@@ -32,17 +33,17 @@ const Footer = () => (
           </nav>
         </div>
         <div>
-          <h4 className="font-display font-semibold mb-3">Fun Stuff</h4>
-          <div className="flex gap-2 text-2xl">
+          <h4 className="font-display font-semibold mb-3">Connect</h4>
+          <div className="flex gap-2 text-xl">
             <span className="animate-float">📚</span>
-            <span className="animate-float" style={{ animationDelay: "0.5s" }}>⭐</span>
-            <span className="animate-float" style={{ animationDelay: "1s" }}>🐉</span>
-            <span className="animate-float" style={{ animationDelay: "1.5s" }}>🧚</span>
+            <span className="animate-float" style={{ animationDelay: "0.5s" }}>🐾</span>
+            <span className="animate-float" style={{ animationDelay: "1s" }}>⭐</span>
+            <span className="animate-float" style={{ animationDelay: "1.5s" }}>🔖</span>
           </div>
         </div>
       </div>
       <div className="border-t border-border mt-8 pt-6 text-center text-sm text-muted-foreground">
-        <p>Made with ❤️ for young readers everywhere • © 2026 Story Spark</p>
+        <p>Made with 📖 for young readers everywhere · © 2026 Page Peek</p>
       </div>
     </div>
   </footer>

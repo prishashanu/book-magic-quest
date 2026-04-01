@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { Search, SlidersHorizontal } from "lucide-react";
+import { Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import BookCard from "@/components/BookCard";
 import { books, categories } from "@/data/books";
@@ -32,8 +32,8 @@ const BrowsePage = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="font-display text-3xl md:text-4xl font-bold mb-2 text-center">📚 Browse Books</h1>
-      <p className="text-muted-foreground text-center mb-8">Find your next favorite story!</p>
+      <h1 className="font-display text-3xl md:text-4xl font-extrabold mb-2 text-center">Browse Books</h1>
+      <p className="text-muted-foreground text-center mb-8">Find your next favorite read 📖</p>
 
       {/* Search */}
       <div className="relative max-w-lg mx-auto mb-8">
@@ -43,29 +43,18 @@ const BrowsePage = () => {
           placeholder="Search books or authors..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="w-full pl-12 pr-4 py-3 rounded-full border border-border bg-card text-sm focus:outline-none focus:ring-2 focus:ring-primary font-body"
+          className="w-full pl-12 pr-4 py-3 rounded-xl border border-border bg-card text-sm focus:outline-none focus:ring-2 focus:ring-primary font-body"
         />
       </div>
 
       {/* Filters */}
       <div className="flex flex-wrap gap-4 mb-8 justify-center">
         <div>
-          <span className="text-xs font-display font-semibold text-muted-foreground block mb-2">Genre</span>
+          <span className="text-xs font-display font-bold text-muted-foreground block mb-2">Genre</span>
           <div className="flex flex-wrap gap-1.5">
-            <Button
-              size="sm"
-              variant={selectedGenre === "All" ? "default" : "outline"}
-              onClick={() => setSelectedGenre("All")}
-            >
-              All
-            </Button>
+            <Button size="sm" variant={selectedGenre === "All" ? "default" : "outline"} onClick={() => setSelectedGenre("All")}>All</Button>
             {categories.map((c) => (
-              <Button
-                key={c.name}
-                size="sm"
-                variant={selectedGenre === c.name ? "default" : "outline"}
-                onClick={() => setSelectedGenre(c.name)}
-              >
+              <Button key={c.name} size="sm" variant={selectedGenre === c.name ? "default" : "outline"} onClick={() => setSelectedGenre(c.name)}>
                 {c.emoji} {c.name}
               </Button>
             ))}
@@ -75,32 +64,18 @@ const BrowsePage = () => {
 
       <div className="flex flex-wrap gap-4 mb-8 justify-center">
         <div>
-          <span className="text-xs font-display font-semibold text-muted-foreground block mb-2">Age Group</span>
+          <span className="text-xs font-display font-bold text-muted-foreground block mb-2">Age Group</span>
           <div className="flex gap-1.5">
             {ageGroups.map((age) => (
-              <Button
-                key={age}
-                size="sm"
-                variant={selectedAge === age ? "default" : "outline"}
-                onClick={() => setSelectedAge(age)}
-              >
-                {age}
-              </Button>
+              <Button key={age} size="sm" variant={selectedAge === age ? "default" : "outline"} onClick={() => setSelectedAge(age)}>{age}</Button>
             ))}
           </div>
         </div>
         <div>
-          <span className="text-xs font-display font-semibold text-muted-foreground block mb-2">Sort By</span>
+          <span className="text-xs font-display font-bold text-muted-foreground block mb-2">Sort By</span>
           <div className="flex gap-1.5">
             {sortOptions.map((opt) => (
-              <Button
-                key={opt}
-                size="sm"
-                variant={sortBy === opt ? "default" : "outline"}
-                onClick={() => setSortBy(opt)}
-              >
-                {opt}
-              </Button>
+              <Button key={opt} size="sm" variant={sortBy === opt ? "default" : "outline"} onClick={() => setSortBy(opt)}>{opt}</Button>
             ))}
           </div>
         </div>
@@ -110,12 +85,12 @@ const BrowsePage = () => {
       <p className="text-sm text-muted-foreground mb-4">{filtered.length} books found</p>
       {filtered.length === 0 ? (
         <div className="text-center py-16">
-          <span className="text-5xl block mb-4">🔍</span>
-          <p className="font-display text-lg font-semibold">No books found!</p>
+          <span className="text-4xl block mb-4">🔍</span>
+          <p className="font-display text-lg font-bold">No books found</p>
           <p className="text-sm text-muted-foreground">Try a different search or filter.</p>
         </div>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {filtered.map((book) => (
             <BookCard key={book.id} book={book} />
           ))}
