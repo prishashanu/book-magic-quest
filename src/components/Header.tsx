@@ -18,11 +18,11 @@ const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-card/80 backdrop-blur-lg border-b border-border/60">
-      <div className="container mx-auto px-4 flex items-center justify-between h-16">
-        <Link to="/" className="flex items-center gap-2.5 group">
-          <img src={mascot} alt="Page Peek mascot" className="h-9 w-9 rounded-full" />
-          <span className="font-display text-xl font-extrabold bg-gradient-to-r from-primary via-lavender to-coral bg-clip-text text-transparent">
+    <header className="sticky top-0 z-50 bg-card/85 backdrop-blur-lg border-b border-border/50">
+      <div className="container mx-auto px-4 flex items-center justify-between h-14">
+        <Link to="/" className="flex items-center gap-2.5">
+          <img src={mascot} alt="Page Peek" className="h-8 w-8 rounded-full" />
+          <span className="font-display text-lg font-extrabold text-foreground">
             Page Peek
           </span>
         </Link>
@@ -32,10 +32,10 @@ const Header = () => {
             <Link
               key={link.to}
               to={link.to}
-              className={`px-3.5 py-2 rounded-lg text-sm font-semibold transition-all duration-200 ${
+              className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
                 location.pathname === link.to
                   ? "bg-primary/10 text-primary"
-                  : "text-muted-foreground hover:text-foreground hover:bg-muted/60"
+                  : "text-muted-foreground hover:text-foreground hover:bg-accent/60"
               }`}
             >
               {link.label}
@@ -43,7 +43,7 @@ const Header = () => {
           ))}
         </nav>
 
-        <div className="hidden lg:flex items-center gap-1.5">
+        <div className="hidden lg:flex items-center gap-1">
           <Link to="/browse">
             <Button variant="ghost" size="icon"><Search className="h-4 w-4" /></Button>
           </Link>
@@ -65,10 +65,10 @@ const Header = () => {
                 key={link.to}
                 to={link.to}
                 onClick={() => setMobileOpen(false)}
-                className={`px-4 py-2.5 rounded-lg text-sm font-semibold transition-all ${
+                className={`px-4 py-2.5 rounded-md text-sm font-medium transition-colors ${
                   location.pathname === link.to
                     ? "bg-primary/10 text-primary"
-                    : "text-muted-foreground hover:bg-muted/60"
+                    : "text-muted-foreground hover:bg-accent/60"
                 }`}
               >
                 {link.label}

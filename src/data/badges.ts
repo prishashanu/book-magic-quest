@@ -1,66 +1,65 @@
 export interface Badge {
   id: string;
   name: string;
-  emoji: string;
+  icon: string;
   desc: string;
   threshold: number;
-  color: string;
   category: "progress" | "genre" | "streak" | "favorites" | "challenge" | "milestone";
   genre?: string;
 }
 
 export const allBadges: Badge[] = [
-  // Progress badges
-  { id: "first-peek", name: "First Peek", emoji: "👀", desc: "Read your first summary", threshold: 1, color: "bg-sky/15", category: "progress" },
-  { id: "bookworm", name: "Bookworm", emoji: "🐛", desc: "Read 5 summaries", threshold: 5, color: "bg-mint/15", category: "progress" },
-  { id: "reading-star", name: "Reading Star", emoji: "⭐", desc: "Read 10 summaries", threshold: 10, color: "bg-sunshine/15", category: "progress" },
-  { id: "page-turner", name: "Page Turner", emoji: "📖", desc: "Read 15 summaries", threshold: 15, color: "bg-lavender/15", category: "progress" },
-  { id: "book-boss", name: "Book Boss", emoji: "👑", desc: "Read 25 summaries", threshold: 25, color: "bg-coral/15", category: "progress" },
-  { id: "legend", name: "Legend", emoji: "🏆", desc: "Read 50 summaries", threshold: 50, color: "bg-sunshine/15", category: "progress" },
+  // Progress
+  { id: "first-peek", name: "First Peek", icon: "bookmark", desc: "Read your first summary", threshold: 1, category: "progress" },
+  { id: "bookworm", name: "Bookworm", icon: "book-open", desc: "Read 5 summaries", threshold: 5, category: "progress" },
+  { id: "reading-star", name: "Rising Reader", icon: "star", desc: "Read 10 summaries", threshold: 10, category: "progress" },
+  { id: "page-turner", name: "Page Turner", icon: "book", desc: "Read 15 summaries", threshold: 15, category: "progress" },
+  { id: "book-boss", name: "Book Boss", icon: "crown", desc: "Read 25 summaries", threshold: 25, category: "progress" },
+  { id: "legend", name: "Legend", icon: "trophy", desc: "Read 50 summaries", threshold: 50, category: "progress" },
 
-  // Genre badges
-  { id: "mystery-master", name: "Mystery Master", emoji: "🕵️", desc: "Read 3 mysteries", threshold: 3, color: "bg-sky/15", category: "genre", genre: "Mystery" },
-  { id: "fantasy-fan", name: "Fantasy Fan", emoji: "🧙", desc: "Read 3 fantasy books", threshold: 3, color: "bg-lavender/15", category: "genre", genre: "Fantasy" },
-  { id: "adventure-ace", name: "Adventure Ace", emoji: "🗺️", desc: "Read 3 adventures", threshold: 3, color: "bg-mint/15", category: "genre", genre: "Adventure" },
-  { id: "comedy-king", name: "Comedy King", emoji: "😂", desc: "Read 3 funny books", threshold: 3, color: "bg-sunshine/15", category: "genre", genre: "Funny Books" },
-  { id: "animal-ally", name: "Animal Ally", emoji: "🐾", desc: "Read 3 animal stories", threshold: 3, color: "bg-coral/15", category: "genre", genre: "Animal Stories" },
-  { id: "sports-star", name: "Sports Star", emoji: "⚽", desc: "Read 3 sports books", threshold: 3, color: "bg-mint/15", category: "genre", genre: "Sports" },
-  { id: "school-scholar", name: "School Scholar", emoji: "🏫", desc: "Read 3 school stories", threshold: 3, color: "bg-sky/15", category: "genre", genre: "School Stories" },
-  { id: "fairy-friend", name: "Fairy Friend", emoji: "🧚", desc: "Read 3 fairy tales", threshold: 3, color: "bg-lavender/15", category: "genre", genre: "Fairy Tales" },
-  { id: "art-lover", name: "Art Lover", emoji: "✏️", desc: "Read 3 graphic novels", threshold: 3, color: "bg-sunshine/15", category: "genre", genre: "Graphic Novels" },
-  { id: "friendship-guru", name: "Friendship Guru", emoji: "🤝", desc: "Read 3 friendship books", threshold: 3, color: "bg-coral/15", category: "genre", genre: "Friendship" },
-  { id: "genre-explorer", name: "Genre Explorer", emoji: "🌎", desc: "Read from 5 genres", threshold: 5, color: "bg-primary/15", category: "genre" },
-  { id: "genre-master", name: "Genre Master", emoji: "🎓", desc: "Read from all 10 genres", threshold: 10, color: "bg-lavender/15", category: "genre" },
+  // Genre
+  { id: "mystery-master", name: "Mystery Master", icon: "search", desc: "Read 3 mysteries", threshold: 3, category: "genre", genre: "Mystery" },
+  { id: "fantasy-fan", name: "Fantasy Fan", icon: "wand", desc: "Read 3 fantasy books", threshold: 3, category: "genre", genre: "Fantasy" },
+  { id: "adventure-ace", name: "Adventure Ace", icon: "compass", desc: "Read 3 adventures", threshold: 3, category: "genre", genre: "Adventure" },
+  { id: "comedy-king", name: "Comedy Fan", icon: "smile", desc: "Read 3 funny books", threshold: 3, category: "genre", genre: "Funny Books" },
+  { id: "animal-ally", name: "Animal Ally", icon: "paw", desc: "Read 3 animal stories", threshold: 3, category: "genre", genre: "Animal Stories" },
+  { id: "sports-star", name: "Sports Star", icon: "target", desc: "Read 3 sports books", threshold: 3, category: "genre", genre: "Sports" },
+  { id: "school-scholar", name: "Scholar", icon: "graduation", desc: "Read 3 school stories", threshold: 3, category: "genre", genre: "School Stories" },
+  { id: "fairy-friend", name: "Tale Keeper", icon: "sparkles", desc: "Read 3 fairy tales", threshold: 3, category: "genre", genre: "Fairy Tales" },
+  { id: "art-lover", name: "Art Lover", icon: "pencil", desc: "Read 3 graphic novels", threshold: 3, category: "genre", genre: "Graphic Novels" },
+  { id: "friendship-guru", name: "Good Friend", icon: "users", desc: "Read 3 friendship books", threshold: 3, category: "genre", genre: "Friendship" },
+  { id: "genre-explorer", name: "Genre Explorer", icon: "globe", desc: "Read from 5 different genres", threshold: 5, category: "genre" },
+  { id: "genre-master", name: "Genre Master", icon: "award", desc: "Read from all 10 genres", threshold: 10, category: "genre" },
 
-  // Streak badges
-  { id: "spark", name: "Spark", emoji: "🔥", desc: "3-day streak", threshold: 3, color: "bg-coral/15", category: "streak" },
-  { id: "on-fire", name: "On Fire", emoji: "🔥", desc: "7-day streak", threshold: 7, color: "bg-coral/15", category: "streak" },
-  { id: "unstoppable", name: "Unstoppable", emoji: "💥", desc: "14-day streak", threshold: 14, color: "bg-sunshine/15", category: "streak" },
-  { id: "streak-legend", name: "Streak Legend", emoji: "⚡", desc: "30-day streak", threshold: 30, color: "bg-primary/15", category: "streak" },
+  // Streak
+  { id: "spark", name: "Getting Started", icon: "flame", desc: "3-day reading streak", threshold: 3, category: "streak" },
+  { id: "on-fire", name: "On a Roll", icon: "flame", desc: "7-day reading streak", threshold: 7, category: "streak" },
+  { id: "unstoppable", name: "Unstoppable", icon: "zap", desc: "14-day reading streak", threshold: 14, category: "streak" },
+  { id: "streak-legend", name: "Streak Legend", icon: "bolt", desc: "30-day reading streak", threshold: 30, category: "streak" },
 
-  // Favorites badges
-  { id: "collector", name: "Collector", emoji: "💖", desc: "Save 3 favorites", threshold: 3, color: "bg-coral/15", category: "favorites" },
-  { id: "super-saver", name: "Super Saver", emoji: "📌", desc: "Save 10 favorites", threshold: 10, color: "bg-lavender/15", category: "favorites" },
-  { id: "library-builder", name: "Library Builder", emoji: "📚", desc: "Save 25 favorites", threshold: 25, color: "bg-sky/15", category: "favorites" },
+  // Favorites
+  { id: "collector", name: "Collector", icon: "heart", desc: "Save 3 favorites", threshold: 3, category: "favorites" },
+  { id: "super-saver", name: "Curator", icon: "bookmark", desc: "Save 10 favorites", threshold: 10, category: "favorites" },
+  { id: "library-builder", name: "Library Builder", icon: "library", desc: "Save 25 favorites", threshold: 25, category: "favorites" },
 
-  // Challenge badges
-  { id: "speed-reader", name: "Speed Reader", emoji: "⚡", desc: "Read 3 in one day", threshold: 3, color: "bg-sunshine/15", category: "challenge" },
-  { id: "weekend-warrior", name: "Weekend Warrior", emoji: "🛡️", desc: "Read 5 on a weekend", threshold: 5, color: "bg-mint/15", category: "challenge" },
-  { id: "night-owl", name: "Night Owl", emoji: "🦉", desc: "Read after 8 PM", threshold: 1, color: "bg-lavender/15", category: "challenge" },
-  { id: "early-bird", name: "Early Bird", emoji: "🐦", desc: "Read before 8 AM", threshold: 1, color: "bg-sunshine/15", category: "challenge" },
+  // Challenge
+  { id: "speed-reader", name: "Speed Reader", icon: "timer", desc: "Read 3 summaries in one day", threshold: 3, category: "challenge" },
+  { id: "weekend-warrior", name: "Weekend Reader", icon: "calendar", desc: "Read 5 on a weekend", threshold: 5, category: "challenge" },
+  { id: "night-owl", name: "Night Owl", icon: "moon", desc: "Read after 8 PM", threshold: 1, category: "challenge" },
+  { id: "early-bird", name: "Early Bird", icon: "sunrise", desc: "Read before 8 AM", threshold: 1, category: "challenge" },
 
-  // Milestone badges
-  { id: "first-fave", name: "First Fave", emoji: "❤️", desc: "Save your first book", threshold: 1, color: "bg-coral/15", category: "milestone" },
-  { id: "reviewer", name: "Reviewer", emoji: "✍️", desc: "Leave a review", threshold: 1, color: "bg-sky/15", category: "milestone" },
-  { id: "explorer", name: "Explorer", emoji: "🔍", desc: "Visit every page", threshold: 1, color: "bg-mint/15", category: "milestone" },
-  { id: "completionist", name: "Completionist", emoji: "✅", desc: "Read all summaries", threshold: 12, color: "bg-primary/15", category: "milestone" },
+  // Milestone
+  { id: "first-fave", name: "First Favorite", icon: "heart", desc: "Save your first book", threshold: 1, category: "milestone" },
+  { id: "reviewer", name: "Reviewer", icon: "pen", desc: "Leave a review", threshold: 1, category: "milestone" },
+  { id: "explorer", name: "Explorer", icon: "compass", desc: "Visit every section", threshold: 1, category: "milestone" },
+  { id: "completionist", name: "Completionist", icon: "check-circle", desc: "Read all available summaries", threshold: 12, category: "milestone" },
 ];
 
 export const badgeCategories = [
-  { key: "progress", label: "Reading Progress", emoji: "📈" },
-  { key: "genre", label: "Genre Mastery", emoji: "📚" },
-  { key: "streak", label: "Streaks", emoji: "🔥" },
-  { key: "favorites", label: "Favorites", emoji: "💖" },
-  { key: "challenge", label: "Challenges", emoji: "🎯" },
-  { key: "milestone", label: "Milestones", emoji: "🏅" },
+  { key: "progress", label: "Progress" },
+  { key: "genre", label: "Genres" },
+  { key: "streak", label: "Streaks" },
+  { key: "favorites", label: "Favorites" },
+  { key: "challenge", label: "Challenges" },
+  { key: "milestone", label: "Milestones" },
 ] as const;
