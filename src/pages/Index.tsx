@@ -139,7 +139,6 @@ const Index = () => {
           <div className="flex flex-wrap justify-center gap-3">
             {allBadges.slice(0, 8).map((badge) => (
               <div key={badge.id} className="bg-card border border-border rounded-lg p-3 w-24 card-hover">
-                <span className="text-2xl block mb-1">{badge.emoji}</span>
                 <span className="font-display text-[11px] font-bold block leading-tight">{badge.name}</span>
               </div>
             ))}
