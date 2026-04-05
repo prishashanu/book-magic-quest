@@ -69,7 +69,7 @@ const Index = () => {
           <div className="text-center md:text-left flex-1">
             <span className="text-xs font-display font-bold text-gold uppercase tracking-wider">Book of the Week</span>
             <h2 className="font-display text-xl font-extrabold mt-1 mb-2">{featured[0]?.title}</h2>
-            <p className="text-muted-foreground text-sm mb-3">by {featured[0]?.author} — {featured[0]?.preview}</p>
+            <p className="text-muted-foreground text-sm mb-3">by {featured[0]?.author} — {featured[0]?.summary[0]?.text}</p>
             <Link to={`/book/${featured[0]?.id}`}>
               <Button size="sm" variant="warm" className="gap-1">Read Summary <ArrowRight className="h-4 w-4" /></Button>
             </Link>
