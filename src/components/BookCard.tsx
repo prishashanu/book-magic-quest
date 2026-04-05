@@ -21,20 +21,21 @@ const BookCard = ({ book }: { book: Book }) => {
       </div>
       <div className="p-4">
         <div className="flex items-center gap-0.5 mb-1">
-          {Array.from({ length: book.rating }).map((_, i) => (
+          {Array.from({ length: Math.floor(book.rating) }).map((_, i) => (
             <Star key={i} className="h-3 w-3 fill-gold text-gold" />
           ))}
-          <span className="text-xs text-muted-foreground ml-1">{book.rating}.0</span>
+          <span className="text-xs text-muted-foreground ml-1">{book.rating}</span>
         </div>
         <h3 className="font-display font-bold text-sm leading-tight mb-1 line-clamp-1">{book.title}</h3>
-        <p className="text-xs text-muted-foreground mb-1.5">by {book.author}</p>
+        <p className="text-xs text-muted-foreground mb-0.5">by {book.author}</p>
+        <p className="text-xs text-muted-foreground/70 mb-1.5">{book.series}</p>
         <div className="flex items-center gap-2 mb-2">
           <span className="text-xs bg-primary/8 text-primary px-2 py-0.5 rounded-md font-medium">{book.genre}</span>
           <span className="text-xs bg-muted px-2 py-0.5 rounded-md flex items-center gap-1">
             <Clock className="h-3 w-3" /> {book.readTime}
           </span>
         </div>
-        <p className="text-xs text-muted-foreground line-clamp-2 mb-3">{book.preview}</p>
+        <p className="text-xs text-muted-foreground line-clamp-2 mb-3">{book.summary[0]?.text}</p>
         <Link to={`/book/${book.id}`}>
           <Button size="sm" className="w-full text-xs">Read Summary</Button>
         </Link>
