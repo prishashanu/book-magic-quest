@@ -10,8 +10,14 @@ const BookCard = ({ book }: { book: Book }) => {
 
   return (
     <div className="bg-card rounded-xl border border-border card-hover overflow-hidden group">
-      <div className={`${book.coverColor} p-6 flex items-center justify-center relative`}>
-        <span className="text-5xl group-hover:scale-105 transition-transform duration-300">{book.coverEmoji}</span>
+      <div className="relative aspect-[2/3] overflow-hidden">
+        {book.coverImage ? (
+          <img src={book.coverImage} alt={book.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+        ) : (
+          <div className={`${book.coverColor} w-full h-full flex items-center justify-center`}>
+            <span className="text-5xl group-hover:scale-105 transition-transform duration-300">{book.coverEmoji}</span>
+          </div>
+        )}
         <button
           onClick={(e) => { e.preventDefault(); toggleFavorite(book.id); }}
           className="absolute top-3 right-3 p-2 rounded-md bg-card/70 backdrop-blur-sm hover:bg-card transition-colors"

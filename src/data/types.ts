@@ -7,6 +7,7 @@ export interface Book {
   ageRange: string;
   coverColor: string;
   coverEmoji: string;
+  coverImage?: string;
   rating: number;
   summary: { label: string; text: string }[];
   characters: string[];

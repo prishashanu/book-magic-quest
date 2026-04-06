@@ -33,8 +33,14 @@ const BookDetailPage = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Cover */}
         <div className="md:col-span-1">
-          <div className={`${book.coverColor} rounded-xl p-12 flex items-center justify-center aspect-square warm-glow`}>
-            <span className="text-[100px]">{book.coverEmoji}</span>
+          <div className={`${book.coverColor} rounded-xl overflow-hidden aspect-[2/3] warm-glow`}>
+            {book.coverImage ? (
+              <img src={book.coverImage} alt={book.title} className="w-full h-full object-cover" />
+            ) : (
+              <div className="w-full h-full flex items-center justify-center">
+                <span className="text-[100px]">{book.coverEmoji}</span>
+              </div>
+            )}
           </div>
           <div className="flex gap-2 mt-4">
             <Button variant={fav ? "warm" : "outline"} className="flex-1 gap-2" onClick={() => toggleFavorite(book.id)}>
