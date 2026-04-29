@@ -70,7 +70,7 @@ const Index = () => {
           </div>
           <div className="text-center md:text-left flex-1">
             <span className="text-xs font-body font-bold text-gold uppercase tracking-wider">Book of the Week</span>
-            <h2 className="font-display text-xl font-extrabold mt-1 mb-2">{popular[0]?.title}</h2>
+            <h2 className="font-display text-3xl font-bold mt-1 mb-2">{popular[0]?.title}</h2>
             <p className="text-muted-foreground text-sm mb-3">by {popular[0]?.author} — {popular[0]?.summary[0]?.text}</p>
             <Link to={`/book/${popular[0]?.id}`}>
               <Button size="sm" variant="warm" className="gap-1">Read Summary <ArrowRight className="h-4 w-4" /></Button>
@@ -89,7 +89,7 @@ const Index = () => {
         <section key={s.name} className={`py-12 ${idx % 2 === 1 ? "bg-cream/30" : ""}`}>
           <div className="container mx-auto px-4">
             <div className="flex items-center justify-between mb-2">
-              <h2 className="font-display text-xl md:text-2xl font-extrabold">{s.name}</h2>
+              <h2 className="font-display text-3xl md:text-4xl font-bold">{s.name}</h2>
               <Link to={`/browse?series=${encodeURIComponent(s.name)}`} className="text-sm text-primary hover:underline font-medium flex items-center gap-1">
                 See All <ArrowRight className="h-4 w-4" />
               </Link>
@@ -106,7 +106,7 @@ const Index = () => {
 
       {/* How It Works */}
       <section className="container mx-auto px-4 py-16">
-        <h2 className="font-display text-xl md:text-2xl font-extrabold text-center mb-10">How It Works</h2>
+        <h2 className="font-display text-3xl md:text-4xl font-bold text-center mb-10">How It Works</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {howItWorks.map((step) => (
             <div key={step.step} className="bg-card rounded-xl border border-border p-6 card-hover text-center">
@@ -114,7 +114,7 @@ const Index = () => {
                 <step.icon className="h-5 w-5 text-primary" />
               </div>
               <span className="font-body text-xs font-bold text-muted-foreground uppercase tracking-wider block mb-2">Step {step.step}</span>
-              <h3 className="font-display text-base font-bold mb-2">{step.title}</h3>
+              <h3 className="font-display text-2xl font-bold mb-2">{step.title}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
             </div>
           ))}
@@ -130,7 +130,7 @@ const Index = () => {
         <div className="relative z-10 container mx-auto px-4 py-16 md:py-20">
           <div className="max-w-md">
             <Sparkles className="h-6 w-6 text-gold mb-3" />
-            <h2 className="font-display text-2xl md:text-3xl font-extrabold mb-3">Your reading nook awaits</h2>
+            <h2 className="font-display text-4xl md:text-5xl font-bold mb-3">Your reading nook awaits</h2>
             <p className="text-muted-foreground text-sm leading-relaxed mb-5">
               Settle into a story. Page Peek gives you short, thoughtful summaries so you can discover new books without the guesswork.
             </p>
@@ -147,7 +147,7 @@ const Index = () => {
       {newest.length > 0 && (
         <section className="container mx-auto px-4 py-16">
           <div className="flex items-center justify-between mb-8">
-            <h2 className="font-display text-xl md:text-2xl font-extrabold">Latest Summaries</h2>
+            <h2 className="font-display text-3xl md:text-4xl font-bold">Latest Summaries</h2>
             <Link to="/browse" className="text-sm text-primary hover:underline font-medium flex items-center gap-1">
               See All <ArrowRight className="h-4 w-4" />
             </Link>
@@ -163,7 +163,7 @@ const Index = () => {
       {/* Badges Preview */}
       <section className="bg-cream/50 py-16">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="font-display text-xl md:text-2xl font-extrabold mb-3">Reading Badges</h2>
+          <h2 className="font-display text-3xl md:text-4xl font-bold mb-3">Reading Badges</h2>
           <p className="text-muted-foreground text-sm mb-8 max-w-md mx-auto">Read books, build streaks, and unlock {allBadges.length} badges across six categories.</p>
           <div className="flex flex-wrap justify-center gap-3">
             {allBadges.slice(0, 8).map((badge) => (
@@ -184,7 +184,7 @@ const Index = () => {
       <section className="container mx-auto px-4 py-16">
         <div className="bg-gradient-to-r from-cream to-sand/30 rounded-xl p-8 text-center border border-border warm-glow">
           <Sparkles className="h-6 w-6 text-gold mx-auto mb-3" />
-          <h2 className="font-display text-xl font-extrabold mb-2">Daily Reading Challenge</h2>
+          <h2 className="font-display text-3xl font-bold mb-2">Daily Reading Challenge</h2>
           <p className="text-muted-foreground text-sm mb-4">Read one summary a day to build your streak and unlock new badges.</p>
           <Link to="/browse">
             <Button size="default" variant="warm" className="gap-2">

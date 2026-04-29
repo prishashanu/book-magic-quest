@@ -64,7 +64,7 @@ const TrackerPage = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="font-display text-2xl md:text-3xl font-extrabold text-center mb-1">Reading Tracker</h1>
+      <h1 className="font-display text-4xl md:text-5xl font-bold text-center mb-1">Reading Tracker</h1>
       <p className="text-muted-foreground text-sm text-center mb-10">Track your progress and unlock badges as you read.</p>
 
       {/* Stats */}
@@ -78,7 +78,7 @@ const TrackerPage = () => {
           <p className="text-xs text-muted-foreground mt-1">Day Streak</p>
         </div>
         <div className="bg-card rounded-xl p-5 text-center border border-border">
-          <p className="font-display text-lg font-bold text-foreground">{favoriteGenre}</p>
+          <p className="font-display text-2xl font-bold text-foreground">{favoriteGenre}</p>
           <p className="text-xs text-muted-foreground mt-1">Top Genre</p>
         </div>
         <div className="bg-card rounded-xl p-5 text-center border border-border">
@@ -90,7 +90,7 @@ const TrackerPage = () => {
       {/* Progress bar */}
       <div className="bg-card rounded-xl border border-border p-6 mb-10">
         <div className="flex items-center justify-between mb-3">
-          <h2 className="font-display text-sm font-bold">Reading Progress</h2>
+          <h2 className="font-display text-2xl font-bold">Reading Progress</h2>
           <span className="text-sm font-display font-bold text-muted-foreground">{readBooks.length} / 12</span>
         </div>
         <div className="w-full bg-muted rounded-full h-2.5 overflow-hidden">
@@ -104,7 +104,7 @@ const TrackerPage = () => {
 
       {/* Badge filters */}
       <div className="flex items-center justify-between mb-4">
-        <h2 className="font-display text-lg font-extrabold">Badges</h2>
+        <h2 className="font-display text-3xl font-bold">Badges</h2>
         <span className="text-xs text-muted-foreground">{earnedCount} of {allBadges.length} unlocked</span>
       </div>
       <div className="flex flex-wrap gap-1.5 mb-6">

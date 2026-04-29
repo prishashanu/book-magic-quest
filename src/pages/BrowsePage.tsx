@@ -39,7 +39,7 @@ const BrowsePage = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="font-display text-2xl md:text-3xl font-extrabold mb-1 text-center">Browse Books</h1>
+      <h1 className="font-display text-4xl md:text-5xl font-bold mb-1 text-center">Browse Books</h1>
       <p className="text-muted-foreground text-sm text-center mb-8">Explore {books.length} summaries across {allSeries.length} series.</p>
 
       {/* Search */}
@@ -107,7 +107,7 @@ const BrowsePage = () => {
       <p className="text-xs text-muted-foreground mb-4">{filtered.length} books found</p>
       {filtered.length === 0 ? (
         <div className="text-center py-16">
-          <p className="font-display text-base font-bold mb-1">No books found</p>
+          <p className="font-display text-2xl font-bold mb-1">No books found</p>
           <p className="text-sm text-muted-foreground">Try a different search or filter.</p>
         </div>
       ) : (
