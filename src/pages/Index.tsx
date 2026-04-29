@@ -40,7 +40,7 @@ const Index = () => {
             <div className="flex justify-center mb-5">
               <img src={mascot} alt="Page Peek mascot" className="h-16 md:h-20 drop-shadow-lg" width={80} height={80} />
             </div>
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 text-foreground leading-tight drop-shadow-sm">
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-foreground leading-tight drop-shadow-sm">
               Your cozy corner<br />for book discovery
             </h1>
             <p className="text-base md:text-lg text-foreground/80 max-w-lg mx-auto mb-8 leading-relaxed">

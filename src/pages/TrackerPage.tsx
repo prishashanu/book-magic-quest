@@ -70,11 +70,11 @@ const TrackerPage = () => {
       {/* Stats */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
         <div className="bg-card rounded-xl p-5 text-center border border-border">
-          <p className="font-display text-3xl font-extrabold text-foreground">{readBooks.length}</p>
+          <p className="font-display text-3xl font-bold text-foreground">{readBooks.length}</p>
           <p className="text-xs text-muted-foreground mt-1">Summaries Read</p>
         </div>
         <div className="bg-card rounded-xl p-5 text-center border border-border">
-          <p className="font-display text-3xl font-extrabold text-foreground">{readingStreak}</p>
+          <p className="font-display text-3xl font-bold text-foreground">{readingStreak}</p>
           <p className="text-xs text-muted-foreground mt-1">Day Streak</p>
         </div>
         <div className="bg-card rounded-xl p-5 text-center border border-border">
@@ -82,7 +82,7 @@ const TrackerPage = () => {
           <p className="text-xs text-muted-foreground mt-1">Top Genre</p>
         </div>
         <div className="bg-card rounded-xl p-5 text-center border border-border">
-          <p className="font-display text-3xl font-extrabold text-foreground">{earnedCount}</p>
+          <p className="font-display text-3xl font-bold text-foreground">{earnedCount}</p>
           <p className="text-xs text-muted-foreground mt-1">Badges Earned</p>
         </div>
       </div>

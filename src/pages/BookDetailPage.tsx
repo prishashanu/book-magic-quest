@@ -13,7 +13,7 @@ const BookDetailPage = () => {
   if (!book) {
     return (
       <div className="container mx-auto px-4 py-16 text-center">
-        <h1 className="font-display text-2xl font-extrabold mb-2">Book Not Found</h1>
+        <h1 className="font-display text-2xl font-bold mb-2">Book Not Found</h1>
         <p className="text-sm text-muted-foreground mb-4">We couldn't find the book you're looking for.</p>
         <Link to="/browse"><Button>Browse Books</Button></Link>
       </div>
