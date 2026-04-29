@@ -67,7 +67,7 @@ const BookDetailPage = () => {
           <p className="text-muted-foreground text-xs mb-4">Series: {book.series}</p>
 
           <div className="flex flex-wrap gap-2 mb-6">
-            <span className="bg-primary/8 text-primary px-3 py-1 rounded-md text-sm font-display font-semibold">{book.genre}</span>
+            <span className="bg-primary/8 text-primary px-3 py-1 rounded-md text-sm font-body font-semibold">{book.genre}</span>
             <span className="bg-muted px-3 py-1 rounded-md text-sm flex items-center gap-1">
               <Clock className="h-3.5 w-3.5" /> {book.readTime} read
             </span>

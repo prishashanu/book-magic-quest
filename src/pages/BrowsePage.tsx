@@ -57,7 +57,7 @@ const BrowsePage = () => {
       {/* Series Filter */}
       <div className="flex flex-wrap gap-4 mb-4 justify-center">
         <div>
-          <span className="text-xs font-display font-semibold text-muted-foreground block mb-1.5">Series</span>
+          <span className="text-xs font-body font-semibold text-muted-foreground block mb-1.5">Series</span>
           <div className="flex flex-wrap gap-1">
             <Button size="sm" variant={selectedSeries === "All" ? "default" : "outline"} onClick={() => setSelectedSeries("All")}>All</Button>
             {allSeries.map((s) => (
@@ -72,7 +72,7 @@ const BrowsePage = () => {
       {/* Genre Filter */}
       <div className="flex flex-wrap gap-4 mb-4 justify-center">
         <div>
-          <span className="text-xs font-display font-semibold text-muted-foreground block mb-1.5">Genre</span>
+          <span className="text-xs font-body font-semibold text-muted-foreground block mb-1.5">Genre</span>
           <div className="flex flex-wrap gap-1">
             <Button size="sm" variant={selectedGenre === "All" ? "default" : "outline"} onClick={() => setSelectedGenre("All")}>All</Button>
             {categories.map((c) => (
@@ -86,7 +86,7 @@ const BrowsePage = () => {
 
       <div className="flex flex-wrap gap-4 mb-8 justify-center">
         <div>
-          <span className="text-xs font-display font-semibold text-muted-foreground block mb-1.5">Age Group</span>
+          <span className="text-xs font-body font-semibold text-muted-foreground block mb-1.5">Age Group</span>
           <div className="flex flex-wrap gap-1">
             {ageGroups.map((age) => (
               <Button key={age} size="sm" variant={selectedAge === age ? "default" : "outline"} onClick={() => setSelectedAge(age)}>{age}</Button>
@@ -94,7 +94,7 @@ const BrowsePage = () => {
           </div>
         </div>
         <div>
-          <span className="text-xs font-display font-semibold text-muted-foreground block mb-1.5">Sort</span>
+          <span className="text-xs font-body font-semibold text-muted-foreground block mb-1.5">Sort</span>
           <div className="flex gap-1">
             {sortOptions.map((opt) => (
               <Button key={opt} size="sm" variant={sortBy === opt ? "default" : "outline"} onClick={() => setSortBy(opt)}>{opt}</Button>

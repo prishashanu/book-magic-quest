@@ -145,7 +145,7 @@ const TrackerPage = () => {
               }`}>
                 {iconMap[badge.icon] || <Star className="h-5 w-5" />}
               </div>
-              <span className="font-display text-xs font-bold block leading-tight">{badge.name}</span>
+              <span className="font-body text-xs font-bold block leading-tight">{badge.name}</span>
               <span className="text-[10px] text-muted-foreground leading-tight block mt-0.5">{badge.desc}</span>
               {earned && <span className="block text-[10px] text-primary font-semibold mt-1">Unlocked</span>}
             </div>

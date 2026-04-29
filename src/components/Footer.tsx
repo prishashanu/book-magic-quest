@@ -15,7 +15,7 @@ const Footer = () => (
           </p>
         </div>
         <div>
-          <h4 className="font-display font-semibold text-sm mb-3">Explore</h4>
+          <h4 className="font-body font-semibold text-sm mb-3">Explore</h4>
           <nav className="flex flex-col gap-2 text-sm text-muted-foreground">
             <Link to="/browse" className="hover:text-foreground transition-colors">Browse Books</Link>
             <Link to="/categories" className="hover:text-foreground transition-colors">Categories</Link>
@@ -23,7 +23,7 @@ const Footer = () => (
           </nav>
         </div>
         <div>
-          <h4 className="font-display font-semibold text-sm mb-3">More</h4>
+          <h4 className="font-body font-semibold text-sm mb-3">More</h4>
           <nav className="flex flex-col gap-2 text-sm text-muted-foreground">
             <Link to="/about" className="hover:text-foreground transition-colors">About</Link>
             <Link to="/contact" className="hover:text-foreground transition-colors">Contact</Link>
@@ -31,7 +31,7 @@ const Footer = () => (
           </nav>
         </div>
         <div>
-          <h4 className="font-display font-semibold text-sm mb-3">Stay Curious</h4>
+          <h4 className="font-body font-semibold text-sm mb-3">Stay Curious</h4>
           <p className="text-sm text-muted-foreground leading-relaxed">
             New summaries added regularly. Keep reading, keep exploring.
           </p>

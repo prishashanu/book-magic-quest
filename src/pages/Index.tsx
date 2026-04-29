@@ -69,7 +69,7 @@ const Index = () => {
             <Star className="h-10 w-10 text-gold" />
           </div>
           <div className="text-center md:text-left flex-1">
-            <span className="text-xs font-display font-bold text-gold uppercase tracking-wider">Book of the Week</span>
+            <span className="text-xs font-body font-bold text-gold uppercase tracking-wider">Book of the Week</span>
             <h2 className="font-display text-xl font-extrabold mt-1 mb-2">{popular[0]?.title}</h2>
             <p className="text-muted-foreground text-sm mb-3">by {popular[0]?.author} — {popular[0]?.summary[0]?.text}</p>
             <Link to={`/book/${popular[0]?.id}`}>
@@ -113,7 +113,7 @@ const Index = () => {
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                 <step.icon className="h-5 w-5 text-primary" />
               </div>
-              <span className="font-display text-xs font-bold text-muted-foreground uppercase tracking-wider block mb-2">Step {step.step}</span>
+              <span className="font-body text-xs font-bold text-muted-foreground uppercase tracking-wider block mb-2">Step {step.step}</span>
               <h3 className="font-display text-base font-bold mb-2">{step.title}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
             </div>
@@ -168,7 +168,7 @@ const Index = () => {
           <div className="flex flex-wrap justify-center gap-3">
             {allBadges.slice(0, 8).map((badge) => (
               <div key={badge.id} className="bg-card border border-border rounded-lg p-3 w-24 card-hover">
-                <span className="font-display text-[11px] font-bold block leading-tight">{badge.name}</span>
+                <span className="font-body text-[11px] font-bold block leading-tight">{badge.name}</span>
               </div>
             ))}
           </div>
