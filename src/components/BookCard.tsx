@@ -32,7 +32,7 @@ const BookCard = ({ book }: { book: Book }) => {
           ))}
           <span className="text-xs text-muted-foreground ml-1">{book.rating}</span>
         </div>
-        <h3 className="font-display font-bold text-sm leading-tight mb-1 line-clamp-1">{book.title}</h3>
+        <h3 className="font-display font-bold text-xl leading-none mb-1 line-clamp-1">{book.title}</h3>
         <p className="text-xs text-muted-foreground mb-0.5">by {book.author}</p>
         <p className="text-xs text-muted-foreground/70 mb-1.5">{book.series}</p>
         <div className="flex items-center gap-2 mb-2">
