@@ -10,12 +10,12 @@ const BookCard = ({ book }: { book: Book }) => {
 
   return (
     <div className="bg-card rounded-xl border border-border card-hover overflow-hidden group">
-      <div className="relative aspect-[2/3] overflow-hidden">
+      <div className="relative aspect-[2/3] overflow-hidden bg-muted">
         {book.coverImage ? (
           <img src={book.coverImage} alt={book.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
         ) : (
-          <div className={`${book.coverColor} w-full h-full flex items-center justify-center`}>
-            <span className="text-5xl group-hover:scale-105 transition-transform duration-300">{book.coverEmoji}</span>
+          <div className={`${book.coverColor} w-full h-full flex items-center justify-center p-4 text-center`}>
+            <span className="font-display text-xl text-foreground/80 leading-tight">{book.title}</span>
           </div>
         )}
         <button
@@ -32,7 +32,7 @@ const BookCard = ({ book }: { book: Book }) => {
           ))}
           <span className="text-xs text-muted-foreground ml-1">{book.rating}</span>
         </div>
-        <h3 className="font-display font-bold text-sm leading-tight mb-1 line-clamp-1">{book.title}</h3>
+        <h3 className="font-display font-bold text-xl leading-none mb-1 line-clamp-1">{book.title}</h3>
         <p className="text-xs text-muted-foreground mb-0.5">by {book.author}</p>
         <p className="text-xs text-muted-foreground/70 mb-1.5">{book.series}</p>
         <div className="flex items-center gap-2 mb-2">

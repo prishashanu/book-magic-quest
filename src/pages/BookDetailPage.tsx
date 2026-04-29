@@ -13,7 +13,7 @@ const BookDetailPage = () => {
   if (!book) {
     return (
       <div className="container mx-auto px-4 py-16 text-center">
-        <h1 className="font-display text-2xl font-extrabold mb-2">Book Not Found</h1>
+        <h1 className="font-display text-2xl font-bold mb-2">Book Not Found</h1>
         <p className="text-sm text-muted-foreground mb-4">We couldn't find the book you're looking for.</p>
         <Link to="/browse"><Button>Browse Books</Button></Link>
       </div>
@@ -37,8 +37,8 @@ const BookDetailPage = () => {
             {book.coverImage ? (
               <img src={book.coverImage} alt={book.title} className="w-full h-full object-cover" />
             ) : (
-              <div className="w-full h-full flex items-center justify-center">
-                <span className="text-[100px]">{book.coverEmoji}</span>
+              <div className="w-full h-full flex items-center justify-center p-6 text-center">
+                <span className="font-display text-3xl text-foreground/80 leading-tight">{book.title}</span>
               </div>
             )}
           </div>
@@ -62,12 +62,12 @@ const BookDetailPage = () => {
             ))}
             <span className="text-sm text-muted-foreground ml-1.5">{book.rating}</span>
           </div>
-          <h1 className="font-display text-2xl md:text-3xl font-extrabold mb-1">{book.title}</h1>
+          <h1 className="font-display text-4xl md:text-5xl font-bold mb-1">{book.title}</h1>
           <p className="text-muted-foreground text-sm mb-1">by {book.author}</p>
           <p className="text-muted-foreground text-xs mb-4">Series: {book.series}</p>
 
           <div className="flex flex-wrap gap-2 mb-6">
-            <span className="bg-primary/8 text-primary px-3 py-1 rounded-md text-sm font-display font-semibold">{book.genre}</span>
+            <span className="bg-primary/8 text-primary px-3 py-1 rounded-md text-sm font-body font-semibold">{book.genre}</span>
             <span className="bg-muted px-3 py-1 rounded-md text-sm flex items-center gap-1">
               <Clock className="h-3.5 w-3.5" /> {book.readTime} read
             </span>
@@ -76,7 +76,7 @@ const BookDetailPage = () => {
 
           <div className="space-y-4">
             <div className="bg-card rounded-xl border border-border p-5">
-              <h2 className="font-display text-sm font-bold mb-3">Summary</h2>
+              <h2 className="font-display text-2xl font-bold mb-3">Summary</h2>
               <ul className="space-y-3">
                 {book.summary.map((point, i) => (
                   <li key={i} className="text-sm text-muted-foreground">
@@ -88,7 +88,7 @@ const BookDetailPage = () => {
             </div>
 
             <div className="bg-card rounded-xl border border-border p-5">
-              <h2 className="font-display text-sm font-bold mb-2">Main Characters</h2>
+              <h2 className="font-display text-2xl font-bold mb-2">Main Characters</h2>
               <ul className="space-y-1.5">
                 {book.characters.map((char, i) => (
                   <li key={i} className="text-sm text-muted-foreground flex items-start gap-2">
@@ -99,7 +99,7 @@ const BookDetailPage = () => {
             </div>
 
             <div className="bg-card rounded-xl border border-border p-5">
-              <h2 className="font-display text-sm font-bold mb-2">Themes</h2>
+              <h2 className="font-display text-2xl font-bold mb-2">Themes</h2>
               <div className="flex flex-wrap gap-2">
                 {book.themes.map((theme, i) => (
                   <span key={i} className="bg-cream/60 text-foreground px-3 py-1 rounded-md text-sm">{theme}</span>
@@ -108,7 +108,7 @@ const BookDetailPage = () => {
             </div>
 
             <div className="bg-cream/50 rounded-xl border border-border p-5">
-              <h2 className="font-display text-sm font-bold mb-2">Why You Might Like It</h2>
+              <h2 className="font-display text-2xl font-bold mb-2">Why You Might Like It</h2>
               <p className="text-sm text-muted-foreground">{book.whyYouMightLikeIt}</p>
             </div>
           </div>
@@ -117,7 +117,7 @@ const BookDetailPage = () => {
 
       {related.length > 0 && (
         <section className="mt-14">
-          <h2 className="font-display text-lg font-extrabold mb-6">More in {book.series}</h2>
+          <h2 className="font-display text-3xl font-bold mb-6">More in {book.series}</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {related.map((b) => <BookCard key={b.id} book={b} />)}
           </div>

@@ -13,12 +13,12 @@ const ContactPage = () => {
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-lg">
-      <h1 className="font-display text-2xl md:text-3xl font-extrabold text-center mb-1">Get in Touch</h1>
+      <h1 className="font-display text-4xl md:text-5xl font-bold text-center mb-1">Get in Touch</h1>
       <p className="text-muted-foreground text-sm text-center mb-8">Got feedback, a book suggestion, or a question? We'd love to hear from you.</p>
 
       <form onSubmit={handleSubmit} className="bg-card rounded-xl border border-border p-6 space-y-4">
         <div>
-          <label className="font-display text-sm font-semibold block mb-1.5">Name</label>
+          <label className="font-body text-sm font-semibold block mb-1.5">Name</label>
           <input
             type="text"
             required
@@ -29,7 +29,7 @@ const ContactPage = () => {
           />
         </div>
         <div>
-          <label className="font-display text-sm font-semibold block mb-1.5">Email</label>
+          <label className="font-body text-sm font-semibold block mb-1.5">Email</label>
           <input
             type="email"
             required
@@ -40,7 +40,7 @@ const ContactPage = () => {
           />
         </div>
         <div>
-          <label className="font-display text-sm font-semibold block mb-1.5">Message</label>
+          <label className="font-body text-sm font-semibold block mb-1.5">Message</label>
           <textarea
             required
             rows={4}
@@ -51,7 +51,7 @@ const ContactPage = () => {
           />
         </div>
         <div>
-          <label className="font-display text-sm font-semibold block mb-1.5">Favorite book (optional)</label>
+          <label className="font-body text-sm font-semibold block mb-1.5">Favorite book (optional)</label>
           <input
             type="text"
             value={form.favoriteBook}

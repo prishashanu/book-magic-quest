@@ -10,12 +10,12 @@ const FavoritesPage = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="font-display text-2xl md:text-3xl font-extrabold text-center mb-1">My Favorites</h1>
+      <h1 className="font-display text-4xl md:text-5xl font-bold text-center mb-1">My Favorites</h1>
       <p className="text-muted-foreground text-sm text-center mb-10">Books you've saved for later.</p>
 
       {favBooks.length === 0 ? (
         <div className="text-center py-16">
-          <p className="font-display text-base font-bold mb-2">No favorites yet</p>
+          <p className="font-display text-2xl font-bold mb-2">No favorites yet</p>
           <p className="text-sm text-muted-foreground mb-4">Browse books and tap the heart icon to save ones you like.</p>
           <Link to="/browse"><Button>Browse Books</Button></Link>
         </div>

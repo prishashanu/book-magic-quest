@@ -8,14 +8,14 @@ const Footer = () => (
         <div>
           <div className="flex items-center gap-2.5 mb-3">
             <img src={mascot} alt="Page Peek" className="h-7 w-7 rounded-full" loading="lazy" width={28} height={28} />
-            <span className="font-display text-base font-extrabold text-foreground">Page Peek</span>
+            <span className="font-display text-base font-bold text-foreground">Page Peek</span>
           </div>
           <p className="text-sm text-muted-foreground leading-relaxed">
             Quick, thoughtful book summaries for young readers who want to discover their next great read.
           </p>
         </div>
         <div>
-          <h4 className="font-display font-semibold text-sm mb-3">Explore</h4>
+          <h4 className="font-body font-semibold text-sm mb-3">Explore</h4>
           <nav className="flex flex-col gap-2 text-sm text-muted-foreground">
             <Link to="/browse" className="hover:text-foreground transition-colors">Browse Books</Link>
             <Link to="/categories" className="hover:text-foreground transition-colors">Categories</Link>
@@ -23,7 +23,7 @@ const Footer = () => (
           </nav>
         </div>
         <div>
-          <h4 className="font-display font-semibold text-sm mb-3">More</h4>
+          <h4 className="font-body font-semibold text-sm mb-3">More</h4>
           <nav className="flex flex-col gap-2 text-sm text-muted-foreground">
             <Link to="/about" className="hover:text-foreground transition-colors">About</Link>
             <Link to="/contact" className="hover:text-foreground transition-colors">Contact</Link>
@@ -31,7 +31,7 @@ const Footer = () => (
           </nav>
         </div>
         <div>
-          <h4 className="font-display font-semibold text-sm mb-3">Stay Curious</h4>
+          <h4 className="font-body font-semibold text-sm mb-3">Stay Curious</h4>
           <p className="text-sm text-muted-foreground leading-relaxed">
             New summaries added regularly. Keep reading, keep exploring.
           </p>

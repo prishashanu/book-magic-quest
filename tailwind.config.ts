@@ -14,7 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ["Plus Jakarta Sans", "sans-serif"],
+        display: ["Caveat", "cursive"],
+        script: ["Kalam", "cursive"],
         body: ["Inter", "sans-serif"],
       },
       colors: {

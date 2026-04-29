@@ -22,7 +22,7 @@ const Header = () => {
       <div className="container mx-auto px-4 flex items-center justify-between h-14">
         <Link to="/" className="flex items-center gap-2.5">
           <img src={mascot} alt="Page Peek" className="h-8 w-8 rounded-full" />
-          <span className="font-display text-lg font-extrabold text-foreground">
+          <span className="font-display text-3xl font-bold text-foreground">
             Page Peek
           </span>
         </Link>
