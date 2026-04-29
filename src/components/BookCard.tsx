@@ -10,12 +10,12 @@ const BookCard = ({ book }: { book: Book }) => {
 
   return (
     <div className="bg-card rounded-xl border border-border card-hover overflow-hidden group">
-      <div className="relative aspect-[2/3] overflow-hidden">
+      <div className="relative aspect-[2/3] overflow-hidden bg-muted">
         {book.coverImage ? (
           <img src={book.coverImage} alt={book.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
         ) : (
-          <div className={`${book.coverColor} w-full h-full flex items-center justify-center`}>
-            <span className="text-5xl group-hover:scale-105 transition-transform duration-300">{book.coverEmoji}</span>
+          <div className={`${book.coverColor} w-full h-full flex items-center justify-center p-4 text-center`}>
+            <span className="font-display text-xl text-foreground/80 leading-tight">{book.title}</span>
           </div>
         )}
         <button
