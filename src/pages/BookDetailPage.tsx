@@ -37,8 +37,8 @@ const BookDetailPage = () => {
             {book.coverImage ? (
               <img src={book.coverImage} alt={book.title} className="w-full h-full object-cover" />
             ) : (
-              <div className="w-full h-full flex items-center justify-center">
-                <span className="text-[100px]">{book.coverEmoji}</span>
+              <div className="w-full h-full flex items-center justify-center p-6 text-center">
+                <span className="font-display text-3xl text-foreground/80 leading-tight">{book.title}</span>
               </div>
             )}
           </div>
